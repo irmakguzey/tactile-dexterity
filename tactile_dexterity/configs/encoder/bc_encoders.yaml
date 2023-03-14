@@ -1,0 +1,16 @@
+image_encoder:
+  _target_: tactile_dexterity.models.resnet18
+  pretrained: true
+  out_dim: 512
+
+tactile_encoder:
+  _target_: tactile_dexterity.models.alexnet
+  pretrained: true
+  out_dim: 1024 # this is only for training usage
+  remove_last_layer: true
+
+last_layer:
+  _target_: tactile_dexterity.models.create_fc 
+  input_dim: 1536 # 1024 + 512
+  output_dim: 23 # 16 + 7
+  hidden_dims: [512, 128, 64]

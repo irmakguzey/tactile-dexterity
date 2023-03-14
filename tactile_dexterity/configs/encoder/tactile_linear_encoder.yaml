@@ -1,0 +1,4 @@
+_target_: tactile_dexterity.models.TactileLinearEncoder
+input_dim: 48 # 16*3
+hidden_dim: 128
+output_dim: 64

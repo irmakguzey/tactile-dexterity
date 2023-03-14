@@ -1,0 +1,15 @@
+_target_: tactile_dexterity.deployers.VINN
+data_path: ???
+
+# Directories to change by the user depending on where they saved the data
+deployment_dump_dir: /deployment/dump/dir
+tactile_out_dir: /tactile/model/out/dir
+image_out_dir: /image/model/out/dir
+
+nn_buffer_size: 20
+nn_k: 20
+representation_types: ['image', 'tactile'] # Observations used in the representations
+representation_importance: [1,1] # We will multiply the distances with these given numbers when using in scaled nearest neighbors
+demos_to_use: [] # Leave empty to use all the demos in the evaluation
+view_num: 1
+open_loop: false

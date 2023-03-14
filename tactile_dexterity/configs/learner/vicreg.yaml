@@ -1,0 +1,6 @@
+# These configs - even though are not going to be used to initialize the learners we will read configs from them
+# They are only learner based configs that's why they're here
+# Loss coefficients
+sim_coef: 25
+std_coef: 25
+cov_coef: 1

@@ -1,0 +1,3 @@
+byol_hidden_layer: -2
+aug_stat_multiplier: 1
+byol_in_channels: 3

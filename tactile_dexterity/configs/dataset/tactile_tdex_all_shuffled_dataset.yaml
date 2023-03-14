@@ -1,0 +1,6 @@
+_target_: tactile_dexterity.datasets.TactileSSLDataset
+data_path: ???
+tactile_img_size: ???
+tactile_information_type: whole_hand # whole_hand, stacked, single_sensor
+duration: 120
+shuffle_type: whole

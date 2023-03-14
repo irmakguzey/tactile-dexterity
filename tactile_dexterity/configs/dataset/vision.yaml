@@ -1,0 +1,3 @@
+_target_: tactile_dexterity.datasets.VisionDataset
+data_path: ???
+view_num: 1

@@ -1,0 +1,4 @@
+_target_: tactile_dexterity.deployers.OpenLoop
+data_path: ???
+apply_allegro_states: false # For fingers touching yourself this should be true
+demo_to_run: 2

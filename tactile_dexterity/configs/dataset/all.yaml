@@ -1,0 +1,5 @@
+_target_: tactile_dexterity.datasets.TactileVisionActionDataset
+data_path: ???
+tactile_img_size: ???
+tactile_information_type: whole_hand
+vision_view_num: 1
