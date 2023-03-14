@@ -1,14 +1,11 @@
 # Script to use some of the deployment wrappers and apply the actions
 import hydra
-import matplotlib.pyplot as plt
-import numpy as np 
 import torch 
 import sys
 
 from holobot_api.api import DeployAPI # This import could be changed depending on how it's used
 from holobot.utils.timer import FrequencyTimer
-from holobot.constants import ALLEGRO_BOX_HANDLE_LIFTING_THUMB_VALUES
-from omegaconf import DictConfig, OmegaConf
+from omegaconf import DictConfig
 
 class Deploy:
     def __init__(self, cfg, deployed_module):
