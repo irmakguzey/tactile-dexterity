@@ -1,49 +1,33 @@
 defaults:
-    # - encoder: bc_encoders
-    # - encoder: tactile_stacked_encoder
-    # - encoder: tactile_single_sensor_encoder
     - encoder: alexnet
-    # - encoder: resnet18
     - learner: tactile_byol
-    # - learner: vicreg # This could be changed after some time
-    # - dataset: all
-    - dataset: tactile_byol_dataset # vision_dataset for camera images
-    # - dataset: vision_dataset
+    - dataset: tactile_tdex_dataset
     - optimizer: adam
 
 seed: 42
 device: cuda
 
-learner_type: tactile_byol # tactile_stacked_byol # tactile_stacked_byol tactile_linear_byol, bc, tactile_byol -- NOTE: this is not going to be used - hopefully
+learner_type: tactile_byol # Can be tactile_stacked_byol # tactile_stacked_byol tactile_linear_byol, bc, tactile_byol
 self_supervised: true
-preprocess: false
-train_epochs: 500 # 300 epochs should be enough for bc training
-save_frequency: 10 # Frequency to save the model - there will be a test in each step
-train_dset_split: 0.95 # When self_supervised all data is used for encoder training
 
 # Hyperparameters to be used everywhere
-batch_size: 128 # 1028 - Trying with a lower batch size
-tactile_image_size: 224 # 224 # 16 - 224 / 4
+batch_size: 1280
+tactile_image_size: 224 # This could be changed for stacked or shared architectures
 vision_image_size: 480
 hidden_dim: 64
+train_epochs: 500
+save_frequency: 10
+train_dset_split: 0.95
+
 distributed: true
 num_workers: 4
 world_size: 1
 num_gpus: 4
 
-fps: 15 # This should be the same as the all the fps in saving - little differences are not going to be taken
-video_type: rgb # NOTE: you could remove this if you want to use both
-
-# this needs to be specified manually
-# object: box_handle_lifting/box_location_changing/training
-#object: bottle_cap_opening
-# object: book_opening
-object: cup_picking
-experiment: ${learner_type}_bs_${batch_size}_${object}_alldata
-# data_dir: /home/irmak/Workspace/Holo-Bot/extracted_data/${object}
-# data_dir: /data/tactile_learning/${object}/eval
-data_dir: /data/tactile_learning/${object}/all
-# data_dir: /home/irmak/Workspace/Holo-Bot/extracted_data/${object}/eval
+# Data path to be set
+object: example_object
+experiment: /root/to/save/the/models # Name of the experiment that the models are saved
+data_dir: /data/root/${object}/all
 checkpoint_dir: ??? # Will be set to hydra dir inside the code
 
 # logger
@@ -53,4 +37,4 @@ log_frequency: 1
 # hydra configuration - should be received separately
 hydra:
     run:
-        dir: /home/irmak/Workspace/tactile-learning/tactile_learning/out/${now:%Y.%m.%d}/${now:%H-%M}_${experiment}
+        dir: /root/directory/of/the/project/out/${now:%Y.%m.%d}/${now:%H-%M}_${experiment}

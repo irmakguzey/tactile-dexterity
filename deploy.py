@@ -10,10 +10,9 @@ from holobot.utils.timer import FrequencyTimer
 from holobot.constants import ALLEGRO_BOX_HANDLE_LIFTING_THUMB_VALUES
 from omegaconf import DictConfig, OmegaConf
 
-class Deployer:
-    def __init__(self, cfg, deployed_module, robots):
+class Deploy:
+    def __init__(self, cfg, deployed_module):
         self.module = deployed_module
-        self.robots = robots
         required_data = {
             'rgb_idxs': [0],
             'depth_idxs': [0]
@@ -51,9 +50,8 @@ class Deployer:
                     allegro = allegro_joint_pos,
                     torque = allegro_joint_torque
                 )
-                if 'kinova' in self.cfg.robots:
-                    kinova_state = robot_state['kinova']
-                    send_robot_state['kinova'] = kinova_state
+                kinova_state = robot_state['kinova']
+                send_robot_state['kinova'] = kinova_state
 
                 pred_action = self.module.get_action(
                     tactile_info,
@@ -77,12 +75,12 @@ class Deployer:
 @hydra.main(version_base=None, config_path='tactile_dexterity/configs', config_name='deploy')
 def main(cfg : DictConfig) -> None:
 
-    deploy_module = hydra.utils.instantiate(
-        cfg.deploy_module,
+    deployer = hydra.utils.instantiate(
+        cfg.deployer,
         data_path = cfg.data_path
     )
-    deployer = Deployer(cfg, deploy_module, cfg.deploy_module.robots)
-    deployer.solve()
+    deploy = Deploy(cfg, deployer)
+    deploy.solve()
 
 if __name__ == '__main__':
     main()

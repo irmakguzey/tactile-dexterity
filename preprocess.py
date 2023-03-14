@@ -13,22 +13,21 @@ def main(cfg : DictConfig) -> None:
         roots = sorted(roots)
     
     for demo_id, root in enumerate(roots):
-        if demo_id > cfg.dump_after:
-            if cfg.dump_fingertips:
-                dump_fingertips(root=root)
-            if dump_data_indices:
-                dump_data_indices(
-                    demo_id = demo_id, 
-                    root = root, 
-                    is_byol_tactile = cfg.tactile_byol, 
-                    is_byol_image = cfg.vision_byol, 
-                    threshold_step_size = cfg.threshold_step_size,
-                    cam_view_num = cfg.view_num
-                )
-            if cfg.vision_byol:
-                dump_video_to_images(root, view_num=cfg.view_num, dump_all=True) # If dump_all == False then it will use the desired images only
-            elif cfg.dump_images:
-                dump_video_to_images(root, view_num=cfg.view_num, dump_all=False)
+        if cfg.dump_fingertips:
+            dump_fingertips(root=root)
+        if dump_data_indices:
+            dump_data_indices(
+                demo_id = demo_id, 
+                root = root, 
+                is_byol_tactile = cfg.tactile_byol, 
+                is_byol_image = cfg.vision_byol, 
+                threshold_step_size = cfg.threshold_step_size,
+                cam_view_num = cfg.view_num
+            )
+        if cfg.vision_byol:
+            dump_video_to_images(root, view_num=cfg.view_num, dump_all=True) # If dump_all == False then it will use the desired images only
+        elif cfg.dump_images:
+            dump_video_to_images(root, view_num=cfg.view_num, dump_all=False)
         print('-----')    
 
 if __name__ == '__main__':

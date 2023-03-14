@@ -1,0 +1,7 @@
+defaults:
+  - deployer: vinn
+
+visualize: true
+loop: true
+frequency: 15
+data_path: /path/to/evaluation/demonstrations # User should fill this

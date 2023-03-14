@@ -1,0 +1,12 @@
+data_path: /path/to/preprocess
+process_single_demo: false
+
+# Preprocessing for different types - if both false then preprocessing is done for deployment
+vision_byol: false
+tactile_byol: false
+
+dump_images: true # If vision_byol is used dump_images should be true
+dump_data_indices: true 
+dump_fingertips: true
+threshold_step_size: 0.02 # Step size to be used in subsampling
+view_num: 0 # Camera ID to dump the images
