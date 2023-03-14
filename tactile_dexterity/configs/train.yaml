@@ -25,9 +25,8 @@ world_size: 1
 num_gpus: 4
 
 # Data path to be set
-object: example_object
-experiment: /root/to/save/the/models # Name of the experiment that the models are saved
-data_dir: /data/root/${object}/all
+experiment: experiment_name # Name of the experiment that the models are saved
+data_dir: /path/to/desired/data
 checkpoint_dir: ??? # Will be set to hydra dir inside the code
 
 # logger
