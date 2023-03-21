@@ -1,5 +1,5 @@
-name: tactile_learning
-channels:
+name: tactile_dexterity
+channels: 
   - conda-forge
   - pytorch
 dependencies:
@@ -22,7 +22,8 @@ dependencies:
   - timm=0.4.12
   - omegaconf
   - h5py
-  - ikpy
   - wandb
   - hydra-core
   - ipdb
+  - pip:
+    - ikpy

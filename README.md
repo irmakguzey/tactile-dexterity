@@ -1,15 +1,6 @@
 # Dexterity from Touch: Self-Supervised Pre-Training of Tactile Representations with Robotic Play
-[[Paper]](TODO) [[Project Website]](https://tactile-dexterity.github.io/) [[Data]](TODO)
+[[Paper]](TODO) [[Project Website]](https://tactile-dexterity.github.io/) [[Data]](https://drive.google.com/drive/folders/148ycBmuvqkdESvAhStlhYJ7ISMgelEvL?usp=sharing)
 
-**Authors**: [Irmak Guzey](https://irmakguzey.github.io/), [Ben Evans](https://bennevans.github.io/), [Soumith Chintala](https://soumith.ch/) and [Lerrel Pinto](https://www.lerrelpinto.com/), New York University and Meta AI
-
-
-This repository includes the official implementation of [T-Dex](https://tactile-dexterity.github.io/), including the training pipeline of tactile encoders and the real-world deployment of the non-parametric imitation learning policies for dexterous manipulation tasks using [Allegro hand](https://www.wonikrobotics.com/research-robot-hand) with [XELA sensors integration](https://xelarobotics.com/en/integrations) and [Kinova arm](https://assistive.kinovarobotics.com/product/jaco-robotic-arm). 
-
-Datasets for the play data and the demonstrations is uploaded in [this Google Drive link](TODO). Instructions on how to use this dataset is given below.
-
-## Robot Runs
-Followings are the deployment tasks of our tactile based imitation learning algorithm.
 <p align="center">
   <img width="30%" src="https://github.com/tactile-dexterity/tactile-dexterity.github.io/blob/main/mfiles/main_task/gamepad.gif">
   <img width="30%" src="https://github.com/tactile-dexterity/tactile-dexterity.github.io/blob/main/mfiles/main_task/bottle_opening.gif">
@@ -19,7 +10,13 @@ Followings are the deployment tasks of our tactile based imitation learning algo
  <p align="center">
   <img width="30%" src="https://github.com/tactile-dexterity/tactile-dexterity.github.io/blob/main/mfiles/main_task/bowl_picking.gif">
   <img width="30%" src="https://github.com/tactile-dexterity/tactile-dexterity.github.io/blob/main/mfiles/main_task/cup_picking.gif">
- </p>
+</p>
+
+**Authors**: [Irmak Guzey](https://irmakguzey.github.io/), [Ben Evans](https://bennevans.github.io/), [Soumith Chintala](https://soumith.ch/) and [Lerrel Pinto](https://www.lerrelpinto.com/), New York University and Meta AI
+
+This repository includes the official implementation of [T-Dex](https://tactile-dexterity.github.io/), including the training pipeline of tactile encoders and the real-world deployment of the non-parametric imitation learning policies for dexterous manipulation tasks using [Allegro hand](https://www.wonikrobotics.com/research-robot-hand) with [XELA sensors integration](https://xelarobotics.com/en/integrations) and [Kinova arm](https://assistive.kinovarobotics.com/product/jaco-robotic-arm). 
+
+Datasets for the play data and the demonstrations is uploaded in [this Google Drive link](https://drive.google.com/drive/folders/148ycBmuvqkdESvAhStlhYJ7ISMgelEvL). Instructions on how to use this dataset is given below.
 
 ## Getting started
 The following assumes our current working directory is the root folder of this project repository; tested on Ubuntu 20.04 LTS (amd64).
@@ -46,17 +43,16 @@ The following assumes our current working directory is the root folder of this p
   ```
 
 ### Pipeline Installation for Demonstration Collection
-This work uses [Holo-Dex](https://github.com/SridharPandian/Holo-Dex) pipeline for demonstration collection. Also uses Holo-Dex package and API in order to connect to the robots.
-You can install `holodex` as a separate package and follow the instructions to install pipeline and collect demonstrations. Same procedure is required for deployment as well.
+This work uses [Holo-Dex](https://github.com/SridharPandian/Holo-Dex) pipeline for demonstration collection and few of the interfaces implemented there. Also uses Holo-Dex package and API in order to connect to the robots.
+You can install `holodex` as a separate package and follow the instructions to install pipeline and collect demonstrations. Same procedure is required for deployment as well. 
 
 ### Getting the tactile play data and the demonstration datasets
-Datasets used for training and evaluation will be uploaded in [this Google Drive link](TODO). 
+Datasets used for training and evaluation will be uploaded in [this Google Drive link](https://drive.google.com/drive/folders/148ycBmuvqkdESvAhStlhYJ7ISMgelEvL). 
 - There will be two separate folders: 
     1. `play_data`: All the tactile play data. Kinova and Allegro commanded and current states are also saved along with tactile and visual observations.
     2. `evaluation`: Successful demonstrations used during robot runs. Each separate directory contains demonstrations for different tasks.
 - Download and unzip the datasets. 
 - Dataset paths will be updated in the configuration files. 
-
 
 ## Reproducing experiments
 The following assumes our current working directory is the root folder of this project repository and the data provided above is being used. 
