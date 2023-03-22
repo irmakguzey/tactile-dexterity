@@ -1,5 +1,5 @@
 # Dexterity from Touch: Self-Supervised Pre-Training of Tactile Representations with Robotic Play
-[[Paper]](TODO) [[Project Website]](https://tactile-dexterity.github.io/) [[Data]](https://drive.google.com/drive/folders/148ycBmuvqkdESvAhStlhYJ7ISMgelEvL?usp=sharing)
+[[Paper]](https://arxiv.org/abs/2303.12076) [[Project Website]](https://tactile-dexterity.github.io/) [[Data]](https://drive.google.com/drive/folders/148ycBmuvqkdESvAhStlhYJ7ISMgelEvL?usp=sharing)
 
 <p align="center">
   <img width="30%" src="https://github.com/tactile-dexterity/tactile-dexterity.github.io/blob/main/mfiles/main_task/gamepad.gif">
@@ -122,12 +122,13 @@ For each deployer module you should set the model directories to the snapshots s
 
 
 ## Citation
-**TODO**
 If you use this repo in your research, please consider citing the paper as follows:
 ```
-@article{arunachalam2022holodex,
-  title={Holo-Dex: Teaching Dexterity with Immersive Mixed Reality},
-  author={Sridhar Pandian Arunachalam and Irmak Guzey and Soumith Chintala and Lerrel Pinto},
-  journal={arXiv preprint arXiv:2210.06463},
-  year={2022}
+@misc{guzey2023dexterity,
+  title={Dexterity from Touch: Self-Supervised Pre-Training of Tactile Representations with Robotic Play}, 
+  author={Irmak Guzey and Ben Evans and Soumith Chintala and Lerrel Pinto},
+  year={2023},
+  eprint={2303.12076},
+  archivePrefix={arXiv},
+  primaryClass={cs.RO}
 }
