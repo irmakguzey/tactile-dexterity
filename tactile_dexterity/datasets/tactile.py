@@ -5,7 +5,7 @@ import torchvision.transforms as T
 from torch.utils import data
 
 from tactile_dexterity.tactile_data import TactileImage
-from tactile_dexterity.utils import *
+from tactile_dexterity.utils import load_data
 
 class TactileSSLDataset(data.Dataset):
     # Dataset for all possible tactile types (stacked, whole hand, one sensor)

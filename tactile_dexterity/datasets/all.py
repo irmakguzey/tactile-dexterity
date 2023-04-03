@@ -7,7 +7,7 @@ import torchvision.transforms as T
 from torch.utils import data
 
 from tactile_dexterity.tactile_data import TactileImage
-from tactile_dexterity.utils import *
+from tactile_dexterity.utils import load_data, VISION_IMAGE_MEANS, VISION_IMAGE_STDS
 
 class TactileVisionActionDataset(data.Dataset):
     def __init__(
