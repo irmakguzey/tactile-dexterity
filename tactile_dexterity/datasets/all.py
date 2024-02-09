@@ -5,9 +5,10 @@ import torch
 import torchvision.transforms as T 
 
 from torch.utils import data
+from torchvision.datasets.folder import default_loader as loader 
 
 from tactile_dexterity.tactile_data import TactileImage
-from tactile_dexterity.utils import load_data, VISION_IMAGE_MEANS, VISION_IMAGE_STDS
+from tactile_dexterity.utils import load_data, crop_transform, VISION_IMAGE_MEANS, VISION_IMAGE_STDS
 
 class TactileVisionActionDataset(data.Dataset):
     def __init__(
@@ -27,7 +28,7 @@ class TactileVisionActionDataset(data.Dataset):
 
         self.vision_transform = T.Compose([
             T.Resize((480,640)),
-            T.Lambda(self._crop_transform),
+            T.Lambda(crop_transform),
             T.ToTensor(),
             T.Normalize(VISION_IMAGE_MEANS, VISION_IMAGE_STDS),
         ])

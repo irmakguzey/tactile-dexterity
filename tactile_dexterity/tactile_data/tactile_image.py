@@ -80,7 +80,7 @@ class TactileImage:
         return self.transform(tactile_image)
     
     def get_tactile_image_for_visualization(self, tactile_values):
-        tactile_image = self._get_whole_hand_tactile_image(tactile_values)
+        tactile_image = self.get_whole_hand_tactile_image(tactile_values)
         tactile_image = T.Resize(224)(tactile_image) # Don't need another normalization
         tactile_image = (tactile_image - tactile_image.min()) / (tactile_image.max() - tactile_image.min())
         return tactile_image  

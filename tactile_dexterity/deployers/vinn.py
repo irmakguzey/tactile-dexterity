@@ -100,7 +100,7 @@ class VINN(Deployer):
             cfg = OmegaConf.create({'encoder':{'out_dim':512}, 'tactile_image_size':224})
         
         elif encoder_type =='image' and out_dir is None: # Load the pretrained encoder 
-            encoder = resnet18(pretrain=True, out_dim=512) # These values are set
+            encoder = resnet18(pretrained=True, out_dim=512) # These values are set
             cfg = OmegaConf.create({"encoder":{"out_dim":512}})
         
         else:

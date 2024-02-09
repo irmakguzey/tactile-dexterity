@@ -51,7 +51,7 @@ def crop_transform(image, camera_view=0): # This is significant to the setup
     elif camera_view == 1:
         return crop(image, 0,90,480,480)
     
-def get_inverse_image_norm(image):
+def get_inverse_image_norm():
     np_means = np.asarray(VISION_IMAGE_MEANS)
     np_stds = np.asarray(VISION_IMAGE_STDS)
 
